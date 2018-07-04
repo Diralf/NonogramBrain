@@ -1,6 +1,6 @@
 const assert = require("assert");
 
-const util = require("./util");
+const util = require("../../node_modules/nonogram-solver/src/util");
 const Puzzle = require('./Puzzle');
 
 const debugMode = require('commander').debug;

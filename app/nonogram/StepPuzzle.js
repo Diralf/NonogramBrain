@@ -1,5 +1,9 @@
 const Puzzle = require('./Puzzle');
 
-class StepPuzzle extends Puzzle {
-    
+module.exports = class StepPuzzle extends Puzzle {
+    constructor(data) {
+        super(data);
+
+        this.solveSteps = [];
+    }
 }

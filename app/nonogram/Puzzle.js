@@ -1,7 +1,7 @@
 const assert = require('assert');
-const clone = require('./util').clone;
-const ascii = require('./serializers/ascii');
-const svg = require('./serializers/svg');
+const clone = require('../../node_modules/nonogram-solver/src/util').clone;
+const ascii = require('../../node_modules/nonogram-solver/src/serializers/ascii');
+const svg = require('../../node_modules/nonogram-solver/src/serializers/svg');
 
 class Puzzle {
   constructor(data) {
