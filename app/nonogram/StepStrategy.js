@@ -105,7 +105,7 @@ module.exports = class StepStrategy extends Strategy {
 
         step.solution = newLine.slice();
         puzzle.solveSteps.push(step);
-        console.log(step);
+        //console.log(step);
 
         if (!debugMode) {
           util.spinner.spin();

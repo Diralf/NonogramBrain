@@ -43,6 +43,7 @@ class Strategy {
       let snapshot = puzzle.snapshot;
       progress = false;
       this.solvers.forEach((solver, i) => {
+        console.log(puzzle);
         if (progress) {
           return;
         }
