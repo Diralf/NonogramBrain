@@ -1,10 +1,10 @@
-const fs = require('fs');
+import fs from "fs";
+import allSolvers from "../../node_modules/nonogram-solver/src/allSolvers";
+import Puzzle from "./StepPuzzle";
+import Strategy from "./StepStrategy";
 
-const allSolvers = require('../../node_modules/nonogram-solver/src/allSolvers');
 //const Puzzle = require('../../node_modules/nonogram-solver/src/Puzzle');
 //let Strategy = require('../../node_modules/nonogram-solver/src/Strategy');
-const Puzzle = require('./StepPuzzle');
-let Strategy = require('./StepStrategy');
 
 if (require.main === module) {
   console.error('Do not run index.js. Try running cli.js instead');

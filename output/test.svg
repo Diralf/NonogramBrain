@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="300" height="400"
+    viewBox="-3.5 -4.5 15 20">
+    <defs>
+        <style type="text/css"><![CDATA[
+            #bg {
+                fill: #fafcff;
+            }
+            .grid, #miss, .hint {
+                stroke-width: .05;
+                stroke-linecap: round;
+                fill: none;
+                stroke: hsl(0, 0%, 0%);
+            }
+            .grid:nth-of-type(5n + 1), .grid:last-of-type {
+                stroke-width: .11;
+            }
+            .hint {
+                stroke: hsl(0, 0%, 80%);
+                fill: hsla(0, 0%, 0%, 0.01);
+            }
+            #hit {
+                fill: hsl(200, 100%, 20%);
+            }
+            #miss {
+                stroke: hsla(20, 40%, 45%, .7);
+                stroke-width: .08;
+            }
+            text {
+                font-family: "Source Sans Pro", Arial, sans-serif;
+                font-weight: bold;
+                font-size: .7px;
+                text-anchor: middle;
+                fill: hsl(0, 0%, 27%);
+            }
+        ]]></style>
+        <rect id="hit" x="-0.375" y="-0.375" width="0.75" height="0.75"/>
+        <path id="miss" class="grid" d="M-0.25,-0.25l0.5,0.5M-0.25,0.25l0.5,-0.5"/>
+    </defs>
+    <rect id="bg" x="-3.5" y="-4.5" width="15" height="20"/><g><rect class="hint" x="-1.1" y="0" width="1" height="1"/>
+      <text x="-0.6000000000000001" y="0.75">7</text><rect class="hint" x="-1.1" y="1" width="1" height="1"/>
+      <text x="-0.6000000000000001" y="1.75">5</text><rect class="hint" x="-1.1" y="2" width="1" height="1"/>
+      <text x="-0.6000000000000001" y="2.75">4</text><rect class="hint" x="-1.1" y="3" width="1" height="1"/>
+      <text x="-0.6000000000000001" y="3.75">4</text><rect class="hint" x="-2.1" y="4" width="1" height="1"/>
+      <text x="-1.6" y="4.75">4</text><rect class="hint" x="-1.1" y="4" width="1" height="1"/>
+      <text x="-0.6000000000000001" y="4.75">3</text><rect class="hint" x="-2.1" y="5" width="1" height="1"/>
+      <text x="-1.6" y="5.75">4</text><rect class="hint" x="-1.1" y="5" width="1" height="1"/>
+      <text x="-0.6000000000000001" y="5.75">4</text><rect class="hint" x="-2.1" y="6" width="1" height="1"/>
+      <text x="-1.6" y="6.75">7</text><rect class="hint" x="-1.1" y="6" width="1" height="1"/>
+      <text x="-0.6000000000000001" y="6.75">1</text><rect class="hint" x="-2.1" y="7" width="1" height="1"/>
+      <text x="-1.6" y="7.75">8</text><rect class="hint" x="-1.1" y="7" width="1" height="1"/>
+      <text x="-0.6000000000000001" y="7.75">1</text><rect class="hint" x="-3.1" y="8" width="1" height="1"/>
+      <text x="-2.6" y="8.75">1</text><rect class="hint" x="-2.1" y="8" width="1" height="1"/>
+      <text x="-1.6" y="8.75">6</text><rect class="hint" x="-1.1" y="8" width="1" height="1"/>
+      <text x="-0.6000000000000001" y="8.75">2</text><rect class="hint" x="-3.1" y="9" width="1" height="1"/>
+      <text x="-2.6" y="9.75">1</text><rect class="hint" x="-2.1" y="9" width="1" height="1"/>
+      <text x="-1.6" y="9.75">6</text><rect class="hint" x="-1.1" y="9" width="1" height="1"/>
+      <text x="-0.6000000000000001" y="9.75">1</text><rect class="hint" x="-2.1" y="10" width="1" height="1"/>
+      <text x="-1.6" y="10.75">2</text><rect class="hint" x="-1.1" y="10" width="1" height="1"/>
+      <text x="-0.6000000000000001" y="10.75">7</text><rect class="hint" x="-1.1" y="11" width="1" height="1"/>
+      <text x="-0.6000000000000001" y="11.75">9</text><rect class="hint" x="-1.1" y="12" width="1" height="1"/>
+      <text x="-0.6000000000000001" y="12.75">6</text><rect class="hint" x="-1.1" y="13" width="1" height="1"/>
+      <text x="-0.6000000000000001" y="13.75">4</text><rect class="hint" x="-1.1" y="14" width="1" height="1"/>
+      <text x="-0.6000000000000001" y="14.75">6</text><rect class="hint" x="0" y="-2.1" width="1" height="1"/>
+      <text x="0.5" y="-1.35">1</text><rect class="hint" x="0" y="-1.1" width="1" height="1"/>
+      <text x="0.5" y="-0.3500000000000001">5</text><rect class="hint" x="1" y="-4.1" width="1" height="1"/>
+      <text x="1.5" y="-3.3499999999999996">2</text><rect class="hint" x="1" y="-3.1" width="1" height="1"/>
+      <text x="1.5" y="-2.35">2</text><rect class="hint" x="1" y="-2.1" width="1" height="1"/>
+      <text x="1.5" y="-1.35">3</text><rect class="hint" x="1" y="-1.1" width="1" height="1"/>
+      <text x="1.5" y="-0.3500000000000001">1</text><rect class="hint" x="2" y="-2.1" width="1" height="1"/>
+      <text x="2.5" y="-1.35">10</text><rect class="hint" x="2" y="-1.1" width="1" height="1"/>
+      <text x="2.5" y="-0.3500000000000001">4</text><rect class="hint" x="3" y="-1.1" width="1" height="1"/>
+      <text x="3.5" y="-0.3500000000000001">15</text><rect class="hint" x="4" y="-1.1" width="1" height="1"/>
+      <text x="4.5" y="-0.3500000000000001">15</text><rect class="hint" x="5" y="-1.1" width="1" height="1"/>
+      <text x="5.5" y="-0.3500000000000001">15</text><rect class="hint" x="6" y="-3.1" width="1" height="1"/>
+      <text x="6.5" y="-2.35">1</text><rect class="hint" x="6" y="-2.1" width="1" height="1"/>
+      <text x="6.5" y="-1.35">7</text><rect class="hint" x="6" y="-1.1" width="1" height="1"/>
+      <text x="6.5" y="-0.3500000000000001">1</text><rect class="hint" x="7" y="-1.1" width="1" height="1"/>
+      <text x="7.5" y="-0.3500000000000001">7</text><rect class="hint" x="8" y="-2.1" width="1" height="1"/>
+      <text x="8.5" y="-1.35">2</text><rect class="hint" x="8" y="-1.1" width="1" height="1"/>
+      <text x="8.5" y="-0.3500000000000001">2</text><rect class="hint" x="9" y="-2.1" width="1" height="1"/>
+      <text x="9.5" y="-1.35">2</text><rect class="hint" x="9" y="-1.1" width="1" height="1"/>
+      <text x="9.5" y="-0.3500000000000001">3</text><rect class="hint" x="10" y="-1.1" width="1" height="1"/>
+      <text x="10.5" y="-0.3500000000000001">5</text></g><g><path class="grid" d="M0,0v15"/><path class="grid" d="M1,0v15"/><path class="grid" d="M2,0v15"/><path class="grid" d="M3,0v15"/><path class="grid" d="M4,0v15"/><path class="grid" d="M5,0v15"/><path class="grid" d="M6,0v15"/><path class="grid" d="M7,0v15"/><path class="grid" d="M8,0v15"/><path class="grid" d="M9,0v15"/><path class="grid" d="M10,0v15"/><path class="grid" d="M11,0v15"/></g><g><path class="grid" d="M0,0h11"/><path class="grid" d="M0,1h11"/><path class="grid" d="M0,2h11"/><path class="grid" d="M0,3h11"/><path class="grid" d="M0,4h11"/><path class="grid" d="M0,5h11"/><path class="grid" d="M0,6h11"/><path class="grid" d="M0,7h11"/><path class="grid" d="M0,8h11"/><path class="grid" d="M0,9h11"/><path class="grid" d="M0,10h11"/><path class="grid" d="M0,11h11"/><path class="grid" d="M0,12h11"/><path class="grid" d="M0,13h11"/><path class="grid" d="M0,14h11"/><path class="grid" d="M0,15h11"/></g><g><use xlink:href="#hit" transform="translate(0.5,0.5)"/><use xlink:href="#hit" transform="translate(1.5,0.5)"/><use xlink:href="#hit" transform="translate(2.5,0.5)"/><use xlink:href="#hit" transform="translate(3.5,0.5)"/><use xlink:href="#hit" transform="translate(4.5,0.5)"/><use xlink:href="#hit" transform="translate(5.5,0.5)"/><use xlink:href="#hit" transform="translate(6.5,0.5)"/><use xlink:href="#miss" transform="translate(7.5,0.5)"/><use xlink:href="#miss" transform="translate(8.5,0.5)"/><use xlink:href="#miss" transform="translate(9.5,0.5)"/><use xlink:href="#miss" transform="translate(10.5,0.5)"/><use xlink:href="#miss" transform="translate(0.5,1.5)"/><use xlink:href="#hit" transform="translate(1.5,1.5)"/><use xlink:href="#hit" transform="translate(2.5,1.5)"/><use xlink:href="#hit" transform="translate(3.5,1.5)"/><use xlink:href="#hit" transform="translate(4.5,1.5)"/><use xlink:href="#hit" transform="translate(5.5,1.5)"/><use xlink:href="#miss" transform="translate(6.5,1.5)"/><use xlink:href="#miss" transform="translate(7.5,1.5)"/><use xlink:href="#miss" transform="translate(8.5,1.5)"/><use xlink:href="#miss" transform="translate(9.5,1.5)"/><use xlink:href="#miss" transform="translate(10.5,1.5)"/><use xlink:href="#miss" transform="translate(0.5,2.5)"/><use xlink:href="#miss" transform="translate(1.5,2.5)"/><use xlink:href="#hit" transform="translate(2.5,2.5)"/><use xlink:href="#hit" transform="translate(3.5,2.5)"/><use xlink:href="#hit" transform="translate(4.5,2.5)"/><use xlink:href="#hit" transform="translate(5.5,2.5)"/><use xlink:href="#miss" transform="translate(6.5,2.5)"/><use xlink:href="#miss" transform="translate(7.5,2.5)"/><use xlink:href="#miss" transform="translate(8.5,2.5)"/><use xlink:href="#miss" transform="translate(9.5,2.5)"/><use xlink:href="#miss" transform="translate(10.5,2.5)"/><use xlink:href="#miss" transform="translate(0.5,3.5)"/><use xlink:href="#miss" transform="translate(1.5,3.5)"/><use xlink:href="#hit" transform="translate(2.5,3.5)"/><use xlink:href="#hit" transform="translate(3.5,3.5)"/><use xlink:href="#hit" transform="translate(4.5,3.5)"/><use xlink:href="#hit" transform="translate(5.5,3.5)"/><use xlink:href="#miss" transform="translate(6.5,3.5)"/><use xlink:href="#miss" transform="translate(7.5,3.5)"/><use xlink:href="#miss" transform="translate(8.5,3.5)"/><use xlink:href="#miss" transform="translate(9.5,3.5)"/><use xlink:href="#miss" transform="translate(10.5,3.5)"/><use xlink:href="#miss" transform="translate(0.5,4.5)"/><use xlink:href="#miss" transform="translate(1.5,4.5)"/><use xlink:href="#hit" transform="translate(2.5,4.5)"/><use xlink:href="#hit" transform="translate(3.5,4.5)"/><use xlink:href="#hit" transform="translate(4.5,4.5)"/><use xlink:href="#hit" transform="translate(5.5,4.5)"/><use xlink:href="#miss" transform="translate(6.5,4.5)"/><use xlink:href="#miss" transform="translate(7.5,4.5)"/><use xlink:href="#hit" transform="translate(8.5,4.5)"/><use xlink:href="#hit" transform="translate(9.5,4.5)"/><use xlink:href="#hit" transform="translate(10.5,4.5)"/><use xlink:href="#miss" transform="translate(0.5,5.5)"/><use xlink:href="#miss" transform="translate(1.5,5.5)"/><use xlink:href="#hit" transform="translate(2.5,5.5)"/><use xlink:href="#hit" transform="translate(3.5,5.5)"/><use xlink:href="#hit" transform="translate(4.5,5.5)"/><use xlink:href="#hit" transform="translate(5.5,5.5)"/><use xlink:href="#miss" transform="translate(6.5,5.5)"/><use xlink:href="#hit" transform="translate(7.5,5.5)"/><use xlink:href="#hit" transform="translate(8.5,5.5)"/><use xlink:href="#hit" transform="translate(9.5,5.5)"/><use xlink:href="#hit" transform="translate(10.5,5.5)"/><use xlink:href="#miss" transform="translate(0.5,6.5)"/><use xlink:href="#hit" transform="translate(1.5,6.5)"/><use xlink:href="#hit" transform="translate(2.5,6.5)"/><use xlink:href="#hit" transform="translate(3.5,6.5)"/><use xlink:href="#hit" transform="translate(4.5,6.5)"/><use xlink:href="#hit" transform="translate(5.5,6.5)"/><use xlink:href="#hit" transform="translate(6.5,6.5)"/><use xlink:href="#hit" transform="translate(7.5,6.5)"/><use xlink:href="#miss" transform="translate(8.5,6.5)"/><use xlink:href="#miss" transform="translate(9.5,6.5)"/><use xlink:href="#hit" transform="translate(10.5,6.5)"/><use xlink:href="#hit" transform="translate(0.5,7.5)"/><use xlink:href="#hit" transform="translate(1.5,7.5)"/><use xlink:href="#hit" transform="translate(2.5,7.5)"/><use xlink:href="#hit" transform="translate(3.5,7.5)"/><use xlink:href="#hit" transform="translate(4.5,7.5)"/><use xlink:href="#hit" transform="translate(5.5,7.5)"/><use xlink:href="#hit" transform="translate(6.5,7.5)"/><use xlink:href="#hit" transform="translate(7.5,7.5)"/><use xlink:href="#miss" transform="translate(8.5,7.5)"/><use xlink:href="#miss" transform="translate(9.5,7.5)"/><use xlink:href="#hit" transform="translate(10.5,7.5)"/><use xlink:href="#hit" transform="translate(0.5,8.5)"/><use xlink:href="#miss" transform="translate(1.5,8.5)"/><use xlink:href="#hit" transform="translate(2.5,8.5)"/><use xlink:href="#hit" transform="translate(3.5,8.5)"/><use xlink:href="#hit" transform="translate(4.5,8.5)"/><use xlink:href="#hit" transform="translate(5.5,8.5)"/><use xlink:href="#hit" transform="translate(6.5,8.5)"/><use xlink:href="#hit" transform="translate(7.5,8.5)"/><use xlink:href="#miss" transform="translate(8.5,8.5)"/><use xlink:href="#hit" transform="translate(9.5,8.5)"/><use xlink:href="#hit" transform="translate(10.5,8.5)"/><use xlink:href="#hit" transform="translate(0.5,9.5)"/><use xlink:href="#miss" transform="translate(1.5,9.5)"/><use xlink:href="#hit" transform="translate(2.5,9.5)"/><use xlink:href="#hit" transform="translate(3.5,9.5)"/><use xlink:href="#hit" transform="translate(4.5,9.5)"/><use xlink:href="#hit" transform="translate(5.5,9.5)"/><use xlink:href="#hit" transform="translate(6.5,9.5)"/><use xlink:href="#hit" transform="translate(7.5,9.5)"/><use xlink:href="#miss" transform="translate(8.5,9.5)"/><use xlink:href="#hit" transform="translate(9.5,9.5)"/><use xlink:href="#miss" transform="translate(10.5,9.5)"/><use xlink:href="#hit" transform="translate(0.5,10.5)"/><use xlink:href="#hit" transform="translate(1.5,10.5)"/><use xlink:href="#miss" transform="translate(2.5,10.5)"/><use xlink:href="#hit" transform="translate(3.5,10.5)"/><use xlink:href="#hit" transform="translate(4.5,10.5)"/><use xlink:href="#hit" transform="translate(5.5,10.5)"/><use xlink:href="#hit" transform="translate(6.5,10.5)"/><use xlink:href="#hit" transform="translate(7.5,10.5)"/><use xlink:href="#hit" transform="translate(8.5,10.5)"/><use xlink:href="#hit" transform="translate(9.5,10.5)"/><use xlink:href="#miss" transform="translate(10.5,10.5)"/><use xlink:href="#hit" transform="translate(0.5,11.5)"/><use xlink:href="#hit" transform="translate(1.5,11.5)"/><use xlink:href="#hit" transform="translate(2.5,11.5)"/><use xlink:href="#hit" transform="translate(3.5,11.5)"/><use xlink:href="#hit" transform="translate(4.5,11.5)"/><use xlink:href="#hit" transform="translate(5.5,11.5)"/><use xlink:href="#hit" transform="translate(6.5,11.5)"/><use xlink:href="#hit" transform="translate(7.5,11.5)"/><use xlink:href="#hit" transform="translate(8.5,11.5)"/><use xlink:href="#miss" transform="translate(9.5,11.5)"/><use xlink:href="#miss" transform="translate(10.5,11.5)"/><use xlink:href="#miss" transform="translate(0.5,12.5)"/><use xlink:href="#hit" transform="translate(1.5,12.5)"/><use xlink:href="#hit" transform="translate(2.5,12.5)"/><use xlink:href="#hit" transform="translate(3.5,12.5)"/><use xlink:href="#hit" transform="translate(4.5,12.5)"/><use xlink:href="#hit" transform="translate(5.5,12.5)"/><use xlink:href="#hit" transform="translate(6.5,12.5)"/><use xlink:href="#miss" transform="translate(7.5,12.5)"/><use xlink:href="#miss" transform="translate(8.5,12.5)"/><use xlink:href="#miss" transform="translate(9.5,12.5)"/><use xlink:href="#miss" transform="translate(10.5,12.5)"/><use xlink:href="#miss" transform="translate(0.5,13.5)"/><use xlink:href="#miss" transform="translate(1.5,13.5)"/><use xlink:href="#hit" transform="translate(2.5,13.5)"/><use xlink:href="#hit" transform="translate(3.5,13.5)"/><use xlink:href="#hit" transform="translate(4.5,13.5)"/><use xlink:href="#hit" transform="translate(5.5,13.5)"/><use xlink:href="#miss" transform="translate(6.5,13.5)"/><use xlink:href="#miss" transform="translate(7.5,13.5)"/><use xlink:href="#miss" transform="translate(8.5,13.5)"/><use xlink:href="#miss" transform="translate(9.5,13.5)"/><use xlink:href="#miss" transform="translate(10.5,13.5)"/><use xlink:href="#miss" transform="translate(0.5,14.5)"/><use xlink:href="#hit" transform="translate(1.5,14.5)"/><use xlink:href="#hit" transform="translate(2.5,14.5)"/><use xlink:href="#hit" transform="translate(3.5,14.5)"/><use xlink:href="#hit" transform="translate(4.5,14.5)"/><use xlink:href="#hit" transform="translate(5.5,14.5)"/><use xlink:href="#hit" transform="translate(6.5,14.5)"/><use xlink:href="#miss" transform="translate(7.5,14.5)"/><use xlink:href="#miss" transform="translate(8.5,14.5)"/><use xlink:href="#miss" transform="translate(9.5,14.5)"/><use xlink:href="#miss" transform="translate(10.5,14.5)"/></g></svg>
