@@ -6,7 +6,7 @@ const util = require("../../node_modules/nonogram-solver/src/util");
 const Puzzle = require('./Puzzle');
 const Step = require('./Step');
 
-const debugMode = require('commander').debug;
+const debugMode = true;//require('commander').debug;
 const { recursionDepth: maxRecursionLevel } = require('commander');
 
 module.exports = class StepStrategy extends Strategy {
@@ -69,12 +69,20 @@ module.exports = class StepStrategy extends Strategy {
         }
         visited.current[i][solverIndex] = 1;
         // First, trim unnecessary information from the line
-        let [trimmedLine, trimmedHints, trimInfo] = util.trimLine(line, hints[i]);
+        
         if (debugMode) {
           var start = Date.now();
         }
+        let newLine, trimInfo;
         // solver run
-        let newLine = solver(trimmedLine, trimmedHints);
+        if (solver.net) {
+          newLine = solver(line.map(val => val), hints[i]);
+        } else {
+          let [trimmedLine, trimmedHints, trimInfoSc] = util.trimLine(line, hints[i]);
+          trimInfo = trimInfoSc;
+          newLine = solver(trimmedLine, trimmedHints);
+        }
+        
 
         if (debugMode) {
           let end = Date.now();
@@ -87,7 +95,11 @@ module.exports = class StepStrategy extends Strategy {
         let hasChanged = false;
         let changedLines = [];
         if (newLine) { // the solver may return null to indicate no progress
-          newLine = util.restoreLine(newLine, trimInfo);
+          if (!solver.net) {
+            newLine = util.restoreLine(newLine, trimInfo);
+          } 
+
+          
           line.forEach((el, i) => {
             // What has changed?
             if (el !== newLine[i]) {

@@ -1,9 +1,27 @@
 const solve = require('./app/nonogram');
-let {status, puzzle} = solve('./puzzles/test.json');
 const utils = require('./app/utils');
 
-console.log(puzzle);
-console.log(puzzle.solveSteps);
-console.log(JSON.stringify(puzzle.solveSteps));
-utils.saveSteps('./puzzles/test.steps.json', puzzle)
-console.log(utils.loadSteps('./puzzles/test.steps.json'));
+
+exports.fetchSteps = puzzleNames => {
+    return puzzleNames.map(preparePuzzle);
+}
+
+exports.getSteps = puzzleNames => {
+    //utils.loadSteps('./puzzles/train1.steps.json')
+    return puzzleNames.map(name => utils.loadSteps(`./puzzles/${name}.steps.json`))
+}
+
+exports.getCommonSteps = puzzleNames => {
+    return exports.getSteps(puzzleNames).reduce((comm, steps) => comm.concat(steps));
+}
+
+function preparePuzzle(puzzleName) {
+    let {status, puzzle} = solve(`./puzzles/${puzzleName}.json`);
+
+    //console.log(puzzle);
+    //console.log(puzzle.solveSteps);
+    //console.log(JSON.stringify(puzzle.solveSteps));
+    utils.saveSteps(`./puzzles/${puzzleName}.steps.json`, puzzle);
+
+    return puzzle;
+}

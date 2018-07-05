@@ -3,7 +3,7 @@ const assert = require("assert");
 const util = require("../../node_modules/nonogram-solver/src/util");
 const Puzzle = require('./Puzzle');
 
-const debugMode = require('commander').debug;
+const debugMode = true;//require('commander').debug;
 const { recursionDepth: maxRecursionLevel } = require('commander');
 
 /**
@@ -42,6 +42,7 @@ class Strategy {
     do {
       let snapshot = puzzle.snapshot;
       progress = false;
+
       this.solvers.forEach((solver, i) => {
         console.log(puzzle);
         if (progress) {
@@ -164,14 +165,14 @@ class Strategy {
           skip = hasChanged && skipEarly;
         }
 
-        if (!debugMode) {
-          util.spinner.spin();
-        } else if (hasChanged) {
+        // if (!debugMode) {
+        //   util.spinner.spin();
+        // } else if (hasChanged) {
           console.log(`found ${newLine}`);
           console.log(puzzle);
           console.log(`Must revisit ${onRow ? 'column' : 'row'}${changedLines.length > 1 ? 's' : ''} ${changedLines.join(',')}`);
           solutionSequence.push(`(${solverIndex})${onRow ? 'r' : 'c'}${i}[${changedLines.join(',')}]`);
-        }
+        // }
       });
     };
 
