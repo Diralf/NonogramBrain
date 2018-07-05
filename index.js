@@ -4,7 +4,7 @@ const train = require('./train');
 
 let brain = new BrainSolution('brain1');
 let files = ['train1'];
-let isTrain = true;
+let isTrain = false;
 
 //prepare.fetchSteps(files);
 let steps = prepare.getCommonSteps(files);

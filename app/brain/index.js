@@ -42,7 +42,7 @@ module.exports = class BrainSolution {
         //console.log("raw", solution);
         solution = solution.filter(val => typeof val !== 'string');
         //console.log("filter", solution);
-        solution = solution.map(val => {
+        solution = solution.slice(0, line.length).map(val => {
             if (val < -1 + 0.1) return -1;
             if (val > 1 - 0.1) return 1;
             return 0;
@@ -52,6 +52,8 @@ module.exports = class BrainSolution {
         for (let i = solutionLength; i < line.length; i++) {
             solution.push(0);
         }
+
+        solution = solution.map((val, i) => line[i] === 0 ? val : line[i]);
         //console.log("rounded", solution);
 
         return solution;
