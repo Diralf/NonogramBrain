@@ -1,7 +1,7 @@
 const fs = require('fs');
 
-exports.saveSteps = (fileName, puzzle) => {
-    fs.writeFileSync(fileName, JSON.stringify(puzzle.solveSteps));
+exports.saveSteps = (fileName, steps) => {
+    fs.writeFileSync(fileName, JSON.stringify(steps));
 }
 
 exports.loadSteps = (fileName) => {

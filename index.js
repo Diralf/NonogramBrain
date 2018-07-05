@@ -2,7 +2,7 @@ const prepare = require('./prepare');
 const BrainSolution = require('./app/brain');
 const train = require('./train');
 
-let brain = new BrainSolution('brain1');
+let brain = new BrainSolution('brain-FFW');
 let files = ['train1'];
 let isTrain = false;
 

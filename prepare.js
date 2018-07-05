@@ -21,7 +21,7 @@ function preparePuzzle(puzzleName) {
     //console.log(puzzle);
     //console.log(puzzle.solveSteps);
     //console.log(JSON.stringify(puzzle.solveSteps));
-    utils.saveSteps(`./puzzles/${puzzleName}.steps.json`, puzzle);
+    utils.saveSteps(`./puzzles/${puzzleName}.steps.json`, puzzle.solveSteps);
 
     return puzzle;
 }
