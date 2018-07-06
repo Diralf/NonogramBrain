@@ -1,10 +1,11 @@
 const brain = require('brain.js');
 const utils = require('../utils');
-const NonogramLSTM = require('./NonogramLSTM');
+//const NonogramLSTM = require('./NonogramLSTM');
 
 module.exports = class BrainSolution {
     constructor(name, isRNN, statisticCallback) {
         this.name = name;
+
 
         if (isRNN) {
             this.net = new brain.recurrent.LSTM({
@@ -49,7 +50,7 @@ module.exports = class BrainSolution {
 
     train(steps) {
         let trainData = steps.map(step => {
-            let input = BrainSolution.convertToInput(step.line, step.hint);
+            let input = this.convertToInput(step.line, step.hint);
             let output = step.solution;
             return {input, output};
         });
@@ -59,12 +60,12 @@ module.exports = class BrainSolution {
 
     solve(line, hints) {
         let solution;
-        let input = BrainSolution.convertToInput(line, hints);
+        let input = this.convertToInput(line, hints);
         //this.net.dataFormatter = null;
         //console.log("-----------------------------");
         //console.log(line, hints);
         solution = this.net.run(input);//.split('');
-        //console.log("raw", solution);
+        console.log("raw", solution);
         solution = solution.filter(val => typeof val !== 'string');
         //console.log("filter", solution);
         solution = solution.slice(0, line.length).map(val => {
@@ -93,7 +94,7 @@ module.exports = class BrainSolution {
         this.net.fromJSON(json);
     }
 
-    static convertToInput(line, hints) {
+    convertToInput(line, hints) {
         let normalHints = BrainSolution.normalizeHints(hints, line.length);
         return line.concat(normalHints);
     }
