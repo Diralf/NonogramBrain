@@ -3,7 +3,7 @@ const assert = require("assert");
 const util = require("../../node_modules/nonogram-solver/src/util");
 const Puzzle = require('./Puzzle');
 
-const debugMode = true;//require('commander').debug;
+const debugMode = require('commander').debug;
 const { recursionDepth: maxRecursionLevel } = require('commander');
 
 /**
@@ -28,8 +28,9 @@ class Strategy {
     if (debugMode) {
       var start = Date.now();
       var statistics = Array(this.solvers.length).fill(0);
-      var solutionSequence = [];
+      
     }
+    var solutionSequence = [];
 
     // keep tracks of visited lines
     this.visited = {

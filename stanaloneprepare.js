@@ -32,7 +32,7 @@ function checkHints(hints, length) {
 
 
 
-for (let l = 1; l < 20; l++) {
+for (let l = 10; l < 11; l++) {
     let steps = [];
     let length = l;
     let hints = [];
@@ -58,9 +58,14 @@ for (let l = 1; l < 20; l++) {
             }
         }
         console.log(l, hints);
-    }
 
-    utils.saveSteps(`./puzzles/manual${l}.steps.json`,steps);
+        if (i % 50 === 0) {
+            utils.saveSteps(`./puzzles/manual${l}-${i}.steps.json`,steps);
+            steps = [];
+        }
+    }
+    utils.saveSteps(`./puzzles/manual${l}-1000.steps.json`,steps);
+    
 }
 
 

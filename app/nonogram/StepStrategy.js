@@ -6,7 +6,7 @@ const util = require("../../node_modules/nonogram-solver/src/util");
 const Puzzle = require('./Puzzle');
 const Step = require('./Step');
 
-const debugMode = true;//require('commander').debug;
+let debugMode = require('commander').debug;
 const { recursionDepth: maxRecursionLevel } = require('commander');
 
 module.exports = class StepStrategy extends Strategy {
@@ -23,6 +23,7 @@ module.exports = class StepStrategy extends Strategy {
     // If we're dealing with a slow solver, we want to skip as soon as one line is partially solved
     let skipEarly = solver.speed === 'slow';
     let skip = false;
+    debugMode = solver.net;
 
     // Optimize iteration order
     let optimizeOrder = (lines, hints) => {
@@ -117,11 +118,10 @@ module.exports = class StepStrategy extends Strategy {
 
         step.solution = newLine.slice();
         puzzle.solveSteps.push(step);
-        //console.log(step);
 
         if (!debugMode) {
           util.spinner.spin();
-        } else if (hasChanged) {
+        } else if (hasChanged && solver.net) {
           console.log(`found ${newLine}`);
           console.log(puzzle);
           console.log(`Must revisit ${onRow ? 'column' : 'row'}${changedLines.length > 1 ? 's' : ''} ${changedLines.join(',')}`);

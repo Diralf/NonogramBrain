@@ -2,9 +2,10 @@ const prepare = require('./prepare');
 const BrainSolution = require('./app/brain');
 const train = require('./train');
 
-let brain = new BrainSolution('brain-FFW');
-let files = ['train1'];
-let isTrain = false;
+let brain = new BrainSolution('brain-FFW', false, null);
+//let brain = new BrainSolution('brain-RNN', true, null);
+let files = ['nonograms.org/Helicopter'/*,'manual10-0', 'manual10-50','manual10-150','manual10-250','manual10-1000',*/];
+let isTrain = true;
 
 //prepare.fetchSteps(files);
 let steps = prepare.getCommonSteps(files);
@@ -14,14 +15,21 @@ if (isTrain) {
 } else {
     brain.load()
 }
-//
-console.log([0,0,0,0,0,0,0,0,0,0,0,0], [9], ' -> ', brain.solve([0,0,0,0,0,0,0,0,0,0,0,0], [9]));
+
+console.log([0,0,0,0,0,0,0,0,0,0], [7], ' -> ', brain.solve([0,0,0,0,0,0,0,0,0,0], [7]));
+
+return 0;
 
 const solve = require('./app/nonogram');
 let solver = (line, hints) => brain.solve(line, hints);
+let testFile = `./puzzles/nonograms.org/Helicopter.json`;
 solver.net = true;
-let {status, puzzle} = solve(`./puzzles/train1.json`, [solver]);
-console.log(puzzle);
+
+let {status, puzzle} = solve(testFile, [solver]);
+console.log('Result of Network', puzzle);
+
+let {statusR, puzzleR} = solve(testFile);
+console.log('Result of Solver', statusR);
 
 
 // for (let step of steps) {

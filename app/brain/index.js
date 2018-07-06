@@ -8,9 +8,9 @@ module.exports = class BrainSolution {
 
         if (isRNN) {
             this.net = new brain.recurrent.LSTM({
-                inputSize: 20,
-                hiddenSizes: [20, 20],
-                outputSize: 12,
+                inputSize: 15,
+                hiddenSizes: [15, 15],
+                outputSize: 10,
                 learningRate: 0.01,
                 decayRate: 0.9,
                 smoothEps: 1e-8,
@@ -19,26 +19,29 @@ module.exports = class BrainSolution {
             });
 
             this.trainOptions = {
-                iterations: 20000,
+                iterations: 1000,
                 errorThresh: 0.005,
-                log: true
+                log: true,
+                logPeriod: 1,
+                callback: () => {this.save()},       // a periodic call back that can be triggered while training
+                callbackPeriod: 1,
             };
         } else {
             this.net = new brain.NeuralNetwork({
                 binaryThresh: 0.5,     // ¯\_(ツ)_/¯
-                hiddenLayers: [20, 21],     // array of ints for the sizes of the hidden layers in the network
+                hiddenLayers: [15],     // array of ints for the sizes of the hidden layers in the network
                 activation: 'tanh'  // Supported activation types ['sigmoid', 'relu', 'leaky-relu', 'tanh']
             });
 
             this.trainOptions = {
-                iterations: 20000,    // the maximum times to iterate the training data
+                iterations: 1,    // the maximum times to iterate the training data
                 errorThresh: 0.005,   // the acceptable error percentage from training data
                 log: true,           // true to use console.log, when a function is supplied it is used
-                logPeriod: 10,        // iterations between logging out
-                learningRate: 0.1,    // multiply's against the input and the delta then adds to momentum
+                logPeriod: 1,        // iterations between logging out
+                learningRate: 0.5,    // multiply's against the input and the delta then adds to momentum
                 momentum: 0.1,        // multiply's against the specified "change" then adds to learning rate for change
-                callback: statisticCallback,       // a periodic call back that can be triggered while training
-                callbackPeriod: 10,   // the number of iterations through the training data between callback calls
+                callback: () => {this.save()},       // a periodic call back that can be triggered while training
+                callbackPeriod: 1000,   // the number of iterations through the training data between callback calls
                 timeout: Infinity     // the max number of milliseconds to train for
             };
         }
@@ -50,7 +53,7 @@ module.exports = class BrainSolution {
             let output = step.solution;
             return {input, output};
         });
-        //console.log(trainData);
+        console.log(trainData);
         this.net.train(trainData, this.trainOptions);
     }
 
