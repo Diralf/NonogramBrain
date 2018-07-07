@@ -4,6 +4,7 @@ import { scaleLinear } from 'd3-scale'
 import { max } from 'd3-array'
 import { select } from 'd3-selection'
 import { axisLeft, axisBottom } from 'd3-axis'
+import { line } from 'd3-line'
 
 class BarChart extends Component {
     constructor(props) {
@@ -60,6 +61,16 @@ class BarChart extends Component {
         // define the x scale (horizontal)
         var mindate = new Date(2012,0,1),
             maxdate = new Date(2012,0,31);
+
+        var x = scaleLinear()
+            .rangeRound([0, this.width]);
+
+        var y = scaleLinear()
+            .rangeRound([this.height, 0]);
+
+        var line = line()
+            .x(function(d) { return x(d.date); })
+            .y(function(d) { return y(d.close); });
             
         var xScale = scaleLinear()
             .domain([1, 20000])    // values between for month of january
@@ -81,6 +92,7 @@ class BarChart extends Component {
         // draw y axis with labels and move in from the size by the amount of padding
         select(node)
             .append("g")
+            .attr("class", "yaxis")   // give it a class so it can be used to select only xaxis labels  below
             .attr("transform", `translate(${this.padding},0)`)
             .call(yAxis);
         // draw x axis with labels and move to the bottom of the chart area
@@ -90,6 +102,17 @@ class BarChart extends Component {
             .attr("transform", "translate(0," + (this.height - this.padding) + ")")
             .call(xAxis);
             
+        select(node)
+            .select("g")
+            .append("path")
+            .datum(this.props.data)
+            .attr("fill", "none")
+            .attr("stroke", "steelblue")
+            .attr("stroke-linejoin", "round")
+            .attr("stroke-linecap", "round")
+            .attr("stroke-width", 1.5)
+            .attr("d", line);
+        //rescale()
         // now rotate text on x axis
         // solution based on idea here: https://groups.google.com/forum/?fromgroups#!topic/d3-js/heOBPQF3sAY
         // first move the text left so no longer centered on the tick
