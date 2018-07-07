@@ -1,0 +1,40 @@
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import BarChart from './BarChart'
+import WorldMap from './WorldMap'
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = { message: '' };
+  }
+
+  componentDidMount() {
+    fetch('/api/message')
+      .then(response => response.json())
+      .then(json => this.setState({ message: json }));
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <div className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h2>{this.state.message}</h2>
+        </div>
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
+        <div>
+          <BarChart data={[5,10,1,3]} size={[500,500]} />
+        </div>
+        <div>
+          <WorldMap data={[5,10,1,3]} size={[500,500]} />
+        </div>
+      </div>
+    );
+  }
+}
+
+export default App;

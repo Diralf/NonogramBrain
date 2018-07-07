@@ -6,7 +6,7 @@ const train = require('./train');
 //let brain = new BrainSolution('brain-FFW', false, null);
 let brain = new BrainSolutionTimeStep('brain-TIMESTEP');
 //let brain = new BrainSolution('brain-RNN', true, null);
-let files = ['nonograms.org/Helicopter'/*,'manual10-0', 'manual10-50','manual10-150','manual10-250','manual10-1000'*/];
+let files = [/*'nonograms.org/Helicopter',*/'manual10-0', 'manual10-50','manual10-150','manual10-250','manual10-1000'];
 let isTrain = true;
 
 //prepare.fetchSteps(files);

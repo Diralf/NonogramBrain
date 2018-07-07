@@ -54,7 +54,7 @@ for (let l = 10; l < 11; l++) {
             solution = solver(line, hints);
 
             if (solution !== null) {
-                steps.push(new Step(line, hints, solution));
+                steps.push(new Step(hints, line, solution));
             }
         }
         console.log(l, hints);

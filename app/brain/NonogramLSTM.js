@@ -8,7 +8,7 @@ module.exports = class BrainSolutionTimeStep extends BrainSolution {
             inputSize: 20,
             hiddenSizes: [20, 20, 20],
             outputSize: 20,
-            learningRate: 0.001,
+            learningRate: 0.0005,
             decayRate: 0.999,
             smoothEps: 1e-8,
             regc: 0.000001,
@@ -16,12 +16,12 @@ module.exports = class BrainSolutionTimeStep extends BrainSolution {
         });
 
         this.trainOptions = {
-            iterations: 10000,
+            iterations: 20000,
             errorThresh: 0.005,
             log: true,
-            logPeriod: 10,
+            logPeriod: 1,
             callback: () => {this.save()},       // a periodic call back that can be triggered while training
-            callbackPeriod: 100,
+            callbackPeriod: 1,
             learningRate: 0.5,    // multiply's against the input and the delta then adds to momentum
             momentum: 0.1        // multiply's against the specified "change" then adds to learning rate for change
                 
