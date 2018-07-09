@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import BarChart from './BarChart'
-import WorldMap from './WorldMap'
+//import BarChart from './BarChart'
+//import WorldMap from './WorldMap'
+import ErrorLine from './ErrorLine'
 
 class App extends Component {
   constructor() {
@@ -27,11 +28,9 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <div>
-          <BarChart data={[5,10,1,3]} size={[500,500]} />
+          <ErrorLine />
         </div>
-        <div>
-          <WorldMap data={[5,10,1,3]} size={[500,500]} />
-        </div>
+        
       </div>
     );
   }
