@@ -65,6 +65,9 @@ class ErrorLine extends Component {
                     this.getError()
                 }
             })
+            .catch(err =>{
+                this.getError()
+            })
     }
 
     render() {

@@ -7,7 +7,7 @@ let brain;
 let steps;
 
 exports.start = function (isLoad, isMakeSteps, trainFiles) {
-    brain = new BrainSolution('brain-FFW-small', false);
+    brain = new BrainSolution('brain-FFW-next', false);
     exports.brain = brain;
     if (isMakeSteps) prepare.fetchSteps(trainFiles);
     steps = prepare.getCommonSteps(trainFiles);

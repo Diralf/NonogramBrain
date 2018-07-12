@@ -10,8 +10,8 @@ router.get('/message', function(req, res, next) {
 });
 
 router.get('/trainstart', function (req,res, next) {
-    brain.start(false, false, ['nonograms.org/Helicopter']);
-    //brain.start(false, false, ['manual10-0'/*, 'manual10-50','manual10-150','manual10-250','manual10-1000'*/]);
+    //brain.start(false, false, ['nonograms.org/Helicopter']);
+    brain.start(false, false, ['manual10-0', 'manual10-50','manual10-150','manual10-250','manual10-1000']);
 
     brain.trainNet((iterationData) => {
         let {error, iterations} = iterationData
